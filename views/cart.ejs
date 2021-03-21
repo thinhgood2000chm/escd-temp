@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>cart</title>
+</head>
+<body>
+ 
+    <form action="/payment" method="post"> 
+    <div class="container">
+    <table class="table  table-hover" >
+        <thead>
+            <tr>
+                <th></th>
+              <th>hình ảnh </th>
+              <th>tên sản phẩm</th>
+              <th>số lượng </th>
+              <th>màu sắc</th>
+              <th>giá</th>
+              <th>kích cỡ</th>
+              <th></th>
+    
+            </tr>
+          </thead>
+          <tbody>
+              <%locals.ucah.forEach(data=>{%>
+                <input type="hidden" id= "id" name="id"value="<%=data._id%>">
+            <tr>
+                <td><a href="/deleteItemFCart/<%=data._id%>"><i id="delete" class="fa fa-trash-o" style="font-size:24px"></i></a></td>
+              <td><img src="<%=data.image%>" alt="" width="100px" height="100px"></td>
+              <td><%=data.name%> </td>
+              <td><%=data.amount%></td>
+              <td><%=data.color%></td>
+              <td><%=data.price%></td>
+              <td><%=data.size%></td>
+              <td><button  class="btn btn-success" name="pay" id="pay"><a href="/payment/<%=data._id%>/<%=data.idFromProduct%>/<%=data.color%>/<%=data.size%>/<%=data.amount%>"> thanh toán</a></button></td>
+        
+            </tr>
+            <%})%>
+    
+            </tbody>
+    </table>
+    <div class="row">
+        <div class="col">
+            <input type="text" placeholder="nhập mã ưu đãi"> <button id="btnApply" class="btn btn-light">ÁP DỤNG</button>
+        </div>  
+        <div class="col"></div>
+      
+    </div>
+</div>
+</form>
+<input type="hidden" value="<%=locals.message%>" id="notifSuccess">
+<%if(user){%>
+    <p><%=user.name%></p>
+    <a href="/logout">logout</a>
+    <p> đây là trang admin</p>
+    <%}%>
+
+<script>
+        var notifSuccess= document.getElementById('notifSuccess').value
+       
+       if(notifSuccess!==''){       
+           alert(notifSuccess)
+          
+       }
+       notifSuccess=''
+       
+
+       // thiết lập lại đường dẫn vì bên authController pay ko gửi lại trang cart mà render lại nội dung trang cart
+       // ==> giá trị trên url pay/.../.../  vẫn còn nên chỉ cần refesh thì nó sẽ mua thêm 1 lần nữa 
+       //==> thay đổi đường dẫn để nó quay lại cart 
+       var pathame = window.location.pathname
+       console.log(pathame);
+       if(pathame!=='/cart'){
+        location.replace('http://localhost:3000/cart')
+       }
+$("#btnApply").mouseover(()=>{
+    $("#btnApply").css({"background-color":"white","border-color":"black","color":"black"})
+
+})
+$("#btnApply").mouseout(()=>{
+    $("#btnApply").css({"background-color":"#1a1a1a","border-color":"black","color":"white"})
+})
+
+
+
+
+</script>
+</body>
+</html>

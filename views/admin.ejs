@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type = "text/JavaScript">
+      
+           function AutoRefresh( t ) {
+              setTimeout("location.reload(true);", t);
+           }
+
+     </script>
+</head>
+<body onload = "JavaScript:AutoRefresh(5*60*1000);">
+    <%if(user){%>
+    <p><%=user.name%></p>
+    <a href="/logout">logout</a>
+    <p> đây là trang admin</p>
+    <%}%>
+    
+ nằm ở menu sản PHẨM
+ <button class="btn btn-success"><a href="/product">sản phẩm đang bán</a></button>
+ <button class="btn btn-success"><a href="/addProduct">thêm sản phẩm</a></button>
+    
+    <input type="text" value="<%=locals.arr%>" name="notification" id="notification" >
+        
+    <script>
+ 
+ 
+        var notification= document.getElementById('notification').value
+       
+        if(notification!==''){       
+            alert(notification.split(',').join("\n"))// xuoongs dong trong alert
+        }
+        </script>
+    
+       
+
+    
+    
+</body>
+</html>

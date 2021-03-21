@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>detail</title>
+
+    <style>
+        #detail{
+            margin: auto;
+            margin-top: 30px;
+        }
+        
+        .dot {
+            height: 15px;
+            width: 15px;
+           
+            border-radius: 50%;
+            display: inline-block;
+            }
+        #dot1{
+            background-color:red;
+        }
+        #dot2{
+            background-color:rgb(0, 17, 255);
+        }
+        #dot3{
+            background-color:rgb(0, 255, 34);
+        }
+        #amount{
+            width: 30px;
+        }
+
+        #btnAddNew{
+            width: 350px;
+        }
+        .card{
+            margin: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class ="container">
+
+    <div class="row">
+        <form action="/detail" method="post">
+        <input type="hidden" id="id" name = "id" value= "<%=result._id%>">
+            <div class="col-md-6">
+                <img src="<%=result.image%>" alt="ảnh mẫu"><input type="hidden" name ="image" value ="<%=result.image%>" >
+            </div>
+
+            <div id="detail" class="col-md-6">
+                <h3><b><%=result.name%></b></h3><input type="hidden" name ="name" value ="<%=result.name%>" >
+                <hr>
+                <h4>giá tiền:<span id="cost"><%=result.price%></span></h4><input type="hidden" id="price" value ="<%=result.price%>" name ="price">
+                <hr>
+                <div class="row">
+                        <div class="col-md-3">
+                        <p><b>màu sắc:</b> </p>
+                        </div>
+                    <div id="createRadioColorParent">
+                        <div id="createRadioColor">
+                        <input type="hidden" id ="lengthPeroperties" name = "colorInput" value="">
+                            <%result.properties.forEach(prop=>{ %>
+                             
+                                <div>
+                                <input type="radio" class="color" name="color" value="<%=prop.color%>">
+                        <label for="male"><%=prop.color%></label><br>
+                     
+                                </div>
+                          
+                           <% })%>
+                    </div>
+                    </div>
+             </div>
+            
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                    <p><b>kích cỡ:</b> </p>
+
+            
+                </div>
+                <div class="colmd-3" id="btnSizeParent">
+                    <% result.properties[0].classify.forEach(c=>{%>
+                        <button type = "button" class="btn btn-light btnSize"  name="btnSize" value="<%=c.size%>"><%=c.size%></button> 
+                    <%})%>
+                <input type="text" name ="size" id ="size" value ="" >
+
+                </div>  
+                </div>
+
+                <button type ="button" id="btnChangeAmountMinus"class="btn btn-light" value="-">-</button>
+                <input type="text" name ="amount" value="1" id="amount">
+                <button id="btnChangeAmountPlus" type ="button" class="btn btn-light" value="+">+</button>
+                <br>
+                <br>
+                <button id="btnAddNew"class="btn btn-dark" >"THÊM VÀO GIỎ HÀNG</button>
+
+                <p><b><%=result.description%></b></p>
+               
+              
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+    <h4><center>SẢN PHẨM LIÊN QUAN</center></h4>
+    <!--<div class="row">
+    <div  class="card col-lg-2 col-md-4 col-sm-6" style="width:200px">
+          
+        <img class="card-img-top" src="img_avatar2.png" alt="Card image" style="width:100%">
+    
+      <div class="card-body">
+        <h4 class="card-title">tên sản phẩm</h4>
+        <p class="card-text">giá tiền</p>
+        <h5>$24.99</h5>
+        
+      </div>
+        <div class="card-footer">
+     
+        </div>
+    </div> 
+    </div>-->
+
+</div>
+
+<script>
+
+
+
+    var cost = parseInt(document.getElementById("cost").textContent);
+    // thiết lập sự kiện cho nút + -
+    $("#btnChangeAmountMinus").click(()=>{
+        var cost2 = parseInt(document.getElementById("cost").textContent);
+        let amount =parseInt(document.getElementById("amount").value);
+        console.log(amount);
+        if(amount<=1){
+            $("#btnChangeAmountMinus").prop("disabled",true)
+        }     
+        else{
+            $("#btnChangeAmountMinus").prop("disabled",false);
+            amount = amount-1;
+            console.log(amount);
+            document.getElementById("amount").value=amount
+            let newCost = cost2-cost;
+            $("#cost").html(newCost);
+             $("#price").val(newCost)
+        }
+    })
+    var cost = parseInt(document.getElementById("cost").textContent);
+    $("#btnChangeAmountPlus").click(()=>{
+        $("#btnChangeAmountMinus").prop("disabled",false);
+        let amount =parseInt(document.getElementById("amount").value);
+       // console.log(amount);
+        amount = amount+1;
+        console.log(amount);
+        document.getElementById("amount").value=amount
+        let newCost = cost*amount;
+         $("#cost").html(newCost);
+         $("#price").val(newCost)
+
+    })
+
+    // lấy giá trị trong radio đưa vào input
+   $(".color").click(()=>{
+    var radios = document.getElementsByName('color');
+    for (var i = 0, length = radios.length; i < length; i++) {
+    if (radios[i].checked) {
+        $("#colorInput").val(radios[i].value)
+
+        break;
+    }
+    } 
+   })
+
+   
+   $(".btnSize").click(()=>{
+       // lấy giá trị value của các button size
+        $('#btnSizeParent button').on('click', function() {
+            var thisBtn = $(this);
+    
+            thisBtn.addClass('active').siblings().removeClass('active');
+            var btnText = thisBtn.text();
+            var btnValue = thisBtn.val();
+            console.log(btnText + ' - ' + btnValue);
+            
+            $('#size').val(btnValue);
+         });
+  
+
+   })
+   
+       
+   
+
+    $("#btnAddNew").mouseover(()=>{
+        $("#btnAddNew").css({"background-color":"white","border-color":"black","color":"black"})
+   
+    })
+    $("#btnAddNew").mouseout(()=>{
+        $("#btnAddNew").css({"background-color":"#1a1a1a","border-color":"black","color":"white"})
+    })
+
+
+</script>
+</body>
+</html>

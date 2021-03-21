@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>total</title>
+</head>
+<body>
+    <form method ='POST' action='/findData'>
+        <div>
+        <button class="btn btn-info">tìm kiếm</button><input type="text" placeholder="nhập tên thông tin tìm kiếm">
+    </div>
+    </form>
+    <form action="/totalPrice" method="post">
+        <div>
+        <label for="year">chọn năm:</label>
+        <select id="year" name="year">
+            <option value="2020">2020</option>
+            <option value="2021"selected>2021</option>
+            <option value="2022">2022</option>
+            <option value="2023" >2023</option>
+        </select>
+
+        <label for="month">chọn tháng:</label>
+        <select id="month" name="month">
+            <option value="1">tháng 1</option>
+            <option value="2">tháng 2</option>
+            <option value="3"selected>tháng 3</option>
+            <option value="4" >tháng 4</option>
+            <option value="5">tháng 5</option>
+            <option value="6">tháng 6</option>
+            <option value="7">tháng 7</option>
+            <option value="8">tháng 8</option>
+            <option value="9">tháng 9</option>
+            <option value="10">tháng 10</option>   
+            <option value="11">tháng 11</option>
+            <option value="12">tháng 12</option>
+        </select>
+        <button class="btn btn-info" >xem tổng kết</button>
+        </div>
+    </form>
+    <%if(locals.message){%>
+        
+        <div class="alert alert-danger"><%=locals.message%> </div>
+        <%}else{%>
+     
+    <h3>tổng tiền :<%=locals.totals%></h3>
+    <%}%>
+    <div class="container">
+        <table class="table  table-hover" >
+            <thead>
+                <tr>
+                   
+                  <th>hình ảnh </th>
+                  <th>tên khách hàng</th>
+                  <th>email</th>
+                  <th>sđt</th>
+                  <th>tên sản phẩm</th>
+                  <th>màu sắc</th>
+                  <th>số lượng </th>
+                  <th>kích cỡ</th>
+                  <th>giá</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                 <% resultsOfMonth.forEach((result)=>{%>
+                    <tr>  
+                        <td><img src="<%=result.image%>" alt="" width="100px" height="100px"></td>
+                        <td><%=result.nameUser%></td>
+                        <td><%=result.email%></td>
+                        <td><%=result.phone%></td>
+                        <td><%=result.name%></td>
+                        <td><%=result.color%> </td>
+                        <td><%=result.amount%> </td>
+                        <td><%=result.size%> </td>
+                        <td><%=result.price%> </td> 
+                      </tr>
+                  <%})%>
+             
+              </tbody>
+              </table>
+
+       
+</body>
+</html>
