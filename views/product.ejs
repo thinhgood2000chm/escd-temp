@@ -101,9 +101,8 @@
     <div class="row">
 
     <div class="col-md-3">
-      <% product.forEach(p=>{%>
-       
-
+      <% product.forEach(p=>{ %>
+<!-- && Number(p.timeend.slice(8,9))<=Number(d.getDate()) && Number(p.timeend.slice(5,6))<=Number(d.getMonth())+1) && Number(d.getFullYear())===Number(p.timeend.slice(0,3) -->
         <div id="card1" class="card" style="width:200px">
           
             <img class="card-img-top" src="<%=p.image%>" alt="Card image" style="width:100%">
@@ -111,6 +110,10 @@
           <div class="card-body">
             <h4 class="card-title"><%=p.name%></h4>
             <p class="card-text"><%=p.price%></p>
+            <%if(p.discount!=null && p.checkDiscount==='true'){%>
+              
+            <p class="card-text"><%=p.price-p.price*p.discount/100%></p>
+            <%}%>
             <h5><%=p._id%></h5>
             
           </div>
@@ -127,7 +130,11 @@
     </div>
 
 </div>
-    
+    <!--  if(p.discount){
+          var d = new Date()
+          if(Number(p.timestart.slice(8,9))>=Number(d.getDate())){
+             if( Number(p.timestart.slice(5,6))>=(Number(d.getMonth())+1)) {
+               if( Number(d.getFullYear())===Number(p.timestart.slice(0,3))) {-->
 
 
 <script>

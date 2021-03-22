@@ -112,6 +112,10 @@
           <div class="card-body">
             <h4 class="card-title"><%=p.name%></h4>
             <p class="card-text"><%=p.price%></p>
+            <%if(p.discount!=null ){%>
+              
+              <p class="card-text"><%=p.price-p.price*p.discount/100%></p>
+              <%}%>
             <h5><%=p._id%></h5>
             
           </div>

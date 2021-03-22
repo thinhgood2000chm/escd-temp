@@ -36,11 +36,25 @@
                         <label for="user">Tên sản phẩm</label>
                         <input class="form-control" type="text" placeholder="Nhập tên sản phẩm" id="name" name="name" value="<%=result.name%>">
                     </div>
-                    <div class="form-group">
-                        <label for="pass2">Giá sản phẩm</label>
-                      
-                        <input class="form-control" type="number" placeholder="Nhập giá bán" id="price" name="price" value="<%=result.price%>">
-                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label for="pass2">Giá sản phẩm</label>
+                        
+                            <input class="form-control" type="number" placeholder="Nhập giá bán" id="price" name="price" value="<%=result.name%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2">giảm gía</label>
+                        
+                            <input class="form-control" type="number" placeholder="Nhập giảm gía nếu có" id="discount" name="discount" value="<%=result.discount%>">
+                            <label for="pass2">ngày bắt đầu</label>
+                            <label for="pass2" id="end">ngày kết thúc</label>
+                            <div>
+                            <input class="" type="date" placeholder="27/05/2020" id="timeS" name="timeS" value="<%=result.timestart%>">
+                            
+                            <input class="" type="date" placeholder="27/05/2020" id="timeE" name="timeE" value="<%=result.timeend%>">
+                            </div>
+                        </div>
+                     </div>
                     <div class="form-group">
                         <label for="pass2">Ảnh sản phẩm</label>
                         <div class="custom-file">

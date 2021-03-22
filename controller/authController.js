@@ -189,6 +189,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -212,6 +216,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -235,6 +243,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -259,6 +271,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -289,6 +305,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -315,6 +335,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -343,6 +367,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -373,6 +401,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -411,6 +443,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -440,6 +476,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -472,6 +512,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -507,6 +551,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -553,6 +601,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -585,6 +637,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -621,6 +677,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -661,6 +721,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -715,6 +779,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -753,6 +821,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -793,6 +865,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -838,6 +914,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -899,6 +979,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -940,6 +1024,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -984,6 +1072,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -1034,6 +1126,10 @@ exports.addProduct=(req,res)=>{
                     type:type,
                     name: name,
                     price: price,
+                    discount: discount,
+                    timestart:timeS,
+                    timeend:timeE,
+                    checkDiscount:'false',
                     image: image,
                     description: desc,
                     properties:[
@@ -1143,7 +1239,7 @@ exports.updateProduct=(req,res)=>{
     for( var j =0; j<inputSize.length;j++){
         countSize= countSize +1
         }
-    let {id, name, price, desc,type }  = req.body
+    let {id, name, price, desc,type,discount,timeS,timeE }  = req.body
     
     if(countColor==1){
         if(countSize==1){
@@ -1151,6 +1247,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1175,6 +1275,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1200,6 +1304,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1226,6 +1334,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1256,6 +1368,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1284,6 +1400,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1314,6 +1434,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1346,6 +1470,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1382,6 +1510,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1413,6 +1545,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1447,6 +1583,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1484,6 +1624,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1526,6 +1670,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1560,6 +1708,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1598,6 +1750,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1640,6 +1796,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1689,6 +1849,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1726,6 +1890,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1768,6 +1936,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1815,6 +1987,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1870,6 +2046,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1910,6 +2090,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -1956,6 +2140,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -2008,6 +2196,10 @@ exports.updateProduct=(req,res)=>{
                 type: type,
                 name: name,
                 price: price,
+                discount: discount,
+                timestart:timeS,
+                timeend:timeE,
+                checkDiscount:'false',
                 image: pathImage,
                 description: desc,
                 properties:[
@@ -2104,7 +2296,7 @@ exports.InsertCart= (req,res)=>{
     }
 }
 
-// thieets lập thanh toán, lưu giá trị bảng total, thay đổi giá trị bảng cartandhistory, 
+// thieets lập thanh toán, thay đổi giá trị bảng cartandhistory, 
 exports.payment= (req,res)=>{
     var id=req.params.id
     var idFromProduct= req.params.idFromProduct
@@ -2166,7 +2358,6 @@ exports.payment= (req,res)=>{
                                             //console.log('dataOfUser',dataOfUser);
                                         }
                                     }
-                                  
                                     res.render('cart',{ucah:dataOfUser, message})
                                     //res.redirect('/cart')
                                 })

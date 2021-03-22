@@ -59,8 +59,13 @@
             <div id="detail" class="col-md-6">
                 <h3><b><%=result.name%></b></h3><input type="hidden" name ="name" value ="<%=result.name%>" >
                 <hr>
-                <h4>giá tiền:<span id="cost"><%=result.price%></span></h4><input type="hidden" id="price" value ="<%=result.price%>" name ="price">
+                <%if(result.discount!=null){%>
+                <h4>giá tiền:<span id="cost"><%=result.price-result.price*result.discount/100%></span></h4><input type="hidden" id="price" value ="<%=result.price-result.price*result.discount/100%>" name ="price">
                 <hr>
+                <%}else{%>
+                    <h4>giá tiền:<span id="cost"><%=result.price%></span></h4><input type="hidden" id="price" value ="<%=result.price%>" name ="price">
+                    <hr>
+                <%}%>
                 <div class="row">
                         <div class="col-md-3">
                         <p><b>màu sắc:</b> </p>

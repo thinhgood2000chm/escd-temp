@@ -10,6 +10,7 @@ const productSchema = new Schema({
     discount: Number,
     timestart:String,
     timeend:String,
+    checkDiscount:String,
     image :{
         type: String 
     },
