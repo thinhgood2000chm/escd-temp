@@ -12,6 +12,7 @@ const userCartAndHistory = require('../models/userCartAndHistory')
 //var ucah= userCartAndHistory.find({})
 const session = require("express-session");
 const { type } = require("os");
+const total = require('../models/total')
 
 
 
@@ -2270,6 +2271,8 @@ exports.InsertCart= (req,res)=>{
                     email: user.email,
                     phone:user.phone,
                     check: "false",
+                    checkAdmin:"false",
+                    acceptAdmin:"false",
                     name: name ,
                     image: image,
                     price: price,
@@ -2305,7 +2308,7 @@ exports.payment= (req,res)=>{
     var size = req.params.size;
     var amount = req.params.amount
     // cập nhật trạng thái từ false sang true ( từ chwua mua -> đã mua )
-    cartAndHistory.findOneAndUpdate({_id: id},{check:'true'},{upsert:true},(err,doc)=>{
+    cartAndHistory.findOneAndUpdate({_id: id},{check:'true', acceptAdmin:'true'},{upsert:true},(err,doc)=>{
         if (err) 
             res.send(500, { error: err }); 
         else 
@@ -2394,7 +2397,7 @@ exports.totalPrice=(req,res)=>{
 
     var totals = 0;
     var resultsOfMonth=[]
-    userCartAndHistory.find({check: "true"},(err,results)=>{
+    total.find({},(err,results)=>{
         //total.find({year:year},(err,doc)=>{
             if(err){
                 res.json({error: err})
@@ -2417,6 +2420,65 @@ exports.totalPrice=(req,res)=>{
     })
 }
 
+// thiết lập khi bấm nút chấp nhận đơn hàng của khách hàng
+exports.accept=(req,res)=>{
+    var {id,nameUser, email, phone, name, image, price, color, size, amount, year, months, type} = req.body
+    console.log(id,nameUser, email, phone, name, image, price, color, size, amount, year, months);
+    let newTotal = new total({
+        nameUser:nameUser,
+        email:email,
+        phone:phone,
+        type:type,
+        name:name,
+        image:image,
+        price:price,
+        color:color,
+        size:size,
+        amount:amount,
+        year:year,
+        months:months
+
+    })
+    newTotal.save()
+    .then(newTotal=>
+        /*res.json({
+            message: "them tk thanh cong"
+        })*/
+        res.redirect('/acceptpayment')
+    )
+    .catch(error =>res.json({
+        message:'loi ko them duoc tk'
+    }))
+    userCartAndHistory.findOneAndUpdate( {_id: id},{checkAdmin:'true', acceptAdmin:'false'},{upsert:true},(err,doc)=>{
+        if (err) 
+            res.send(500, { error: err }); 
+        else 
+        {
+            console.log("update success");
+        res.redirect('/acceptpayment')
+    }
+    })
+}
+
+
+exports.deleteAcceptPayment=(req,res)=>{
+    if(!req.params.id){
+        res.json({code:1, message:"invalid data"})
+    }
+    else {
+            var id= req.params.id;
+            userCartAndHistory.findByIdAndUpdate({_id:id},{acceptAdmin:'false'},{upsert:true},(err,result)=>{
+                if (err) 
+                    res.send(500, { error: err }); 
+                else 
+                {
+                    console.log("update success");
+                    res.redirect('/acceptpayment')
+                }
+            })
+        }
+    
+}
 exports.search=(req,res)=>{
     var {dataF, dataT, dataNameType} = req.body
     var productSearch=[]

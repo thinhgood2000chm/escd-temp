@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>total</title>
+</head>
+<body>
+  
+
+    <div class="container">
+        <table class="table  table-hover" >
+            <thead>
+                <tr>
+                   
+                  <th>hình ảnh </th>
+                  <th>tên khách hàng</th>
+                  <th>email</th>
+                  <th>sđt</th>
+                  <th>tên sản phẩm</th>
+                  <th>màu sắc</th>
+                  <th>số lượng </th>
+                  <th>kích cỡ</th>
+                  <th>giá</th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                 <% order.forEach((result)=>{%>
+                    <tr>  
+                        <form action="/accept" method= "post">
+                        <td><img src="<%=result.image%>" alt="" width="100px" height="100px"></td>
+                        <td><%=result.nameUser%></td>
+                        <td><%=result.email%></td>
+                        <td><%=result.phone%></td>
+                        <td><%=result.name%></td>
+                        <td><%=result.color%> </td>
+                        <td><%=result.amount%> </td>
+                        <td><%=result.size%> </td>
+                        <td><%=result.price%> </td> 
+                        <td><button>chấp nhận</button></td>
+                        
+                        <input type="hidden" value="<%=result._id%>" name="id">
+                        <input type="hidden" value="<%=result.nameUser%>"name="nameUser" >
+                        <input type="hidden" value="<%=result.email%>"name="email">
+                        <input type="hidden" value="<%=result.phone%>"name="phone" >
+                        <input type="hidden" value="<%=result.name%>" name="name">
+                        <input type="hidden" value="<%=result.image%>" name="image">
+                        <input type="hidden" value="<%=result.price%>" name="price">
+                        <input type="hidden" value="<%=result.color%>" name="color">
+                        <input type="hidden" value="<%=result.amount%>" name="amount">
+                        <input type="hidden" value="<%=result.size%>" name="size">
+                        <input type="hidden" value="<%=result.year%>" name="year">
+                        <input type="hidden" value="<%=result.months%>" name="months">
+                        <input type="hidden" value="<%=result.type%>" name="type">
+                   </form>
+                   <td><button><a href = "/deleteAcceptPayment/<%=result._id%>">xóa</a></button></td>
+                      </tr>
+                  <%})%>
+             
+              </tbody>
+              </table>
+
+       
+</body>
+</html>

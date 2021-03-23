@@ -8,6 +8,8 @@ const UserCartAndHistory= new Schema({
     email: String,
     phone:String,
     check: String,
+    checkAdmin:String,// dùng để hiển thị sản phẩm lên trang total 
+    acceptAdmin:String,// dùng để hiển thị hoặc xóa sp sau khi đã bấm chấp nhận
     type:String,
     name: String,
     image: String,

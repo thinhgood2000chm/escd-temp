@@ -239,18 +239,34 @@ router.get('/user/history',authenticate, (req,res)=>{
         
         
 })
+router.get('/acceptpayment',authenticate,(req,res)=>{
+    //var total=0
+    // đầu tiên khi vừa vào sẽ show all data sau khi bấm chọn tháng năm thì mới chuyển qua data theo từng tháng năm 
+    if(req.cookies.user){
+        if(req.cookies.user.includes("admin752")){// hiển trị true thì show ra 
+            userCartAndHistory.find({acceptAdmin: "true"},(err,order)=>{
+                res.render('acceptPayment',{order})
+            })
+        }
+        else res.redirect('/productUser')
+    }
+})
+
+router.get('/deleteAcceptPayment/:id',authController.deleteAcceptPayment)
+
 router.get('/total',authenticate,(req,res)=>{
     //var total=0
     // đầu tiên khi vừa vào sẽ show all data sau khi bấm chọn tháng năm thì mới chuyển qua data theo từng tháng năm 
     if(req.cookies.user){
         if(req.cookies.user.includes("admin752")){
-            userCartAndHistory.find({check: "true"},(err,resultsOfMonth)=>{
+            total.find({},(err,resultsOfMonth)=>{
                 res.render('total',{resultsOfMonth})
             })
         }
         else res.redirect('/productUser')
     }
 })
+
 router.get('/payment/:id/:idFromProduct/:color/:size/:amount',authController.payment)
 
 router.get("/deleteItemFCart/:id",authController.deleteItemFCart)
